@@ -8,7 +8,7 @@ export async function main(ns) {
         ns.tprint(`> run ${ns.getScriptName()} n00dles`);
         return;
     }
-    const ram = ns.getServerRam(server);
+    const ram = ns.getServerMaxRam(server);
     const money = ns.getServerMoneyAvailable(server);
     const maxMoney = ns.getServerMaxMoney(server);
     const minSec = ns.getServerMinSecurityLevel(server);
