@@ -24,6 +24,7 @@ export async function main(ns) {
         const used = ns.getServerUsedRam(server);
         const max = ns.getServerMaxRam(server);
         const free = ns.getServerMaxRam(server) - ns.getServerUsedRam(server);
-        ns.tprint(`${server} is opened. ${used} GB / ${max} GB (${(100*used/max).toFixed(2)}%)`)
+        ns.tprint(`${server} is opened. ${used} GB / ${max} GB (${(100*used/max).toFixed(2)}%) used, ${free} GB free`);
+        
     }
 }
