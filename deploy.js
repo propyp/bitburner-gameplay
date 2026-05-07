@@ -23,7 +23,7 @@ export async function main(ns) {
 	}
 
 	const threads = Math.floor((ns.getServerMaxRam(host) - ns.getServerUsedRam(host)) / ns.getScriptRam(script));
-	ns.tprint(`Launching script '${script}' on server '${host}' with ${threads} threads and the following arguments: ${script_args}`);
+	ns.tprint(`'${ns.getServerMaxRam(host)}' '${ns.getServerUsedRam(host)}' '${ns.getScriptRam(script)}' Launching script '${script}' on server '${host}' with ${threads} threads and the following arguments: ${script_args}`);
 	await ns.scp(script, ns.getHostname(), host);
 	ns.exec(script, host, threads, ...script_args);
 }
